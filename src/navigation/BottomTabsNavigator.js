@@ -1,13 +1,13 @@
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-
 import {
-  AirQuality,
   NotificationScreen,
   ProfileScreen,
   SettingsScreen,
+  Home,
 } from "@screens";
 import { useTheme } from "../theme/ThemeProvider.tsx";
+import { translate } from "../locale/index";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -16,13 +16,13 @@ const BottomTabsNavigator = (props) => {
 
   return (
     <Tab.Navigator
-      initialRouteName="Home"
-      activeColor={theme.colors.secondaryDark}
+      initialRouteName={"Home"}
+      activeColor={theme.colors.white}
       inactiveColor={theme.colors.secondary}
       barStyle={{
         backgroundColor: theme.colors.primary,
         borderTopWidth: 1,
-        borderTopColor: theme.colors.secondary,
+        borderTopColor: theme.colors.primary,
       }}
       labeled
       shifting
@@ -30,9 +30,9 @@ const BottomTabsNavigator = (props) => {
     >
       <Tab.Screen
         name="Home"
-        component={AirQuality}
+        component={Home}
         options={{
-          tabBarLabel: "Home",
+          tabBarLabel: translate("Home"),
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-home" color={color} size={24} />
           ),
@@ -42,7 +42,7 @@ const BottomTabsNavigator = (props) => {
         name="Notifications"
         component={NotificationScreen}
         options={{
-          tabBarLabel: "Notifications",
+          tabBarLabel: translate("Notifications"),
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-notifications" color={color} size={24} />
           ),
@@ -52,7 +52,7 @@ const BottomTabsNavigator = (props) => {
         name="Settings"
         component={SettingsScreen}
         options={{
-          tabBarLabel: "Settings",
+          tabBarLabel: translate("Settings"),
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-settings" color={color} size={24} />
           ),
@@ -62,7 +62,7 @@ const BottomTabsNavigator = (props) => {
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarLabel: "Profile",
+          tabBarLabel: translate("Profile"),
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-person" color={color} size={24} />
           ),

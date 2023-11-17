@@ -1,6 +1,6 @@
-import AirQuality from "./Home";
+import Home from "./Home";
 import ProfileScreen from "./ProfileScreen";
 import NotificationScreen from "./NotificationScreen";
 import SettingsScreen from "./SettingsScreen";
 
-export { AirQuality, ProfileScreen, NotificationScreen, SettingsScreen };
+export { Home, ProfileScreen, NotificationScreen, SettingsScreen };

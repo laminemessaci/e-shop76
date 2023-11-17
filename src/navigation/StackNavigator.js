@@ -1,11 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { createStackNavigator } from "@react-navigation/stack";
-import {
-  AirQuality,
-  ProfileScreen,
-  SettingsScreen,
-  NotificationScreen,
-} from "@screens";
+
 import BottomTabsNavigator from "./BottomTabsNavigator.js";
 
 const Stack = createStackNavigator();

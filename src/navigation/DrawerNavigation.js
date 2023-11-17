@@ -2,11 +2,10 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import CustomDrawer from "../components/CustomDrawer/index.js";
 import {
-  AirQuality,
   NotificationScreen,
   SettingsScreen,
   ProfileScreen,
-} from "../screens/index.js";
+} from "@screens";
 import { useTheme } from "../theme/ThemeProvider.tsx";
 import AppStackNavigator from "./StackNavigator.js";
 
