@@ -16,9 +16,13 @@ import {
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useTheme } from "../../theme/ThemeProvider.tsx";
+import { useTranslation } from "../../locale/useTranslation.js";
+
+import styles, { Container } from "./index.style";
 
 const CustomDrawer = (props) => {
   const theme = useTheme();
+  const { t, changeLanguage, language } = useTranslation();
   const [loaded] = useFonts({
     Montserrat: require("../../../assets/fonts/Montserrat-Light.ttf"),
   });
@@ -28,7 +32,7 @@ const CustomDrawer = (props) => {
   }
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container(theme)}>
       <DrawerContentScrollView
         {...props}
         contentContainerStyle={{ backgroundColor: theme.colors.primary }}

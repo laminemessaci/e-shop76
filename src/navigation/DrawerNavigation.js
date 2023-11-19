@@ -1,11 +1,8 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { NotificationScreen, ProfileScreen, SettingsScreen } from "@screens";
 import CustomDrawer from "../components/CustomDrawer/index.js";
-import {
-  NotificationScreen,
-  SettingsScreen,
-  ProfileScreen,
-} from "@screens";
+import { useTranslation } from "../locale/useTranslation.js";
 import { useTheme } from "../theme/ThemeProvider.tsx";
 import AppStackNavigator from "./StackNavigator.js";
 
@@ -13,6 +10,8 @@ const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
   const theme = useTheme();
+  const { t, changeLanguage, language } = useTranslation();
+
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawer {...props} />}
@@ -29,7 +28,7 @@ const DrawerNavigation = () => {
       }}
     >
       <Drawer.Screen
-        name={"Home"}
+        name={t("Home")}
         component={AppStackNavigator}
         options={{
           drawerIcon: ({ color }) => (
@@ -38,7 +37,7 @@ const DrawerNavigation = () => {
         }}
       />
       <Drawer.Screen
-        name={"Profile"}
+        name={t("Profile")}
         component={ProfileScreen}
         options={{
           drawerIcon: ({ color }) => (
@@ -48,7 +47,7 @@ const DrawerNavigation = () => {
       />
 
       <Drawer.Screen
-        name={"Messages"}
+        name={t("Messages")}
         component={NotificationScreen}
         options={{
           drawerIcon: ({ color }) => (
@@ -57,7 +56,7 @@ const DrawerNavigation = () => {
         }}
       />
       <Drawer.Screen
-        name={"Settings"}
+        name={t("Settings")}
         component={SettingsScreen}
         options={{
           drawerIcon: ({ color }) => (

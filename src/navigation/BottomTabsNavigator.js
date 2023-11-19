@@ -1,3 +1,5 @@
+import React, { useEffect } from "react";
+
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import {
@@ -7,12 +9,15 @@ import {
   Home,
 } from "@screens";
 import { useTheme } from "../theme/ThemeProvider.tsx";
-import { translate } from "../locale/index";
+import { useTranslation } from "../locale/useTranslation.js";
 
 const Tab = createMaterialBottomTabNavigator();
 
 const BottomTabsNavigator = (props) => {
   const theme = useTheme();
+  const { t, changeLanguage, language } = useTranslation();
+
+
 
   return (
     <Tab.Navigator
@@ -32,7 +37,7 @@ const BottomTabsNavigator = (props) => {
         name="Home"
         component={Home}
         options={{
-          tabBarLabel: translate("Home"),
+          tabBarLabel: t("Home"),
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-home" color={color} size={24} />
           ),
@@ -42,7 +47,7 @@ const BottomTabsNavigator = (props) => {
         name="Notifications"
         component={NotificationScreen}
         options={{
-          tabBarLabel: translate("Notifications"),
+          tabBarLabel: t("Notifications"),
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-notifications" color={color} size={24} />
           ),
@@ -52,7 +57,7 @@ const BottomTabsNavigator = (props) => {
         name="Settings"
         component={SettingsScreen}
         options={{
-          tabBarLabel: translate("Settings"),
+          tabBarLabel: t("Settings"),
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-settings" color={color} size={24} />
           ),
@@ -62,7 +67,7 @@ const BottomTabsNavigator = (props) => {
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarLabel: translate("Profile"),
+          tabBarLabel: t("Profile"),
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-person" color={color} size={24} />
           ),
