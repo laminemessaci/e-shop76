@@ -17,8 +17,6 @@ const BottomTabsNavigator = (props) => {
   const theme = useTheme();
   const { t, changeLanguage, language } = useTranslation();
 
-
-
   return (
     <Tab.Navigator
       initialRouteName={"Home"}

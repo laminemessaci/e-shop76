@@ -10,6 +10,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import DrawerNavigation from "./src/navigation/DrawerNavigation.js";
 import React from "react";
 import { TranslationProvider } from "./src/locale/TranslationContext";
+import Header from "./src/components/Header";
 
 
 
@@ -21,6 +22,7 @@ export default function App() {
    <TranslationProvider>
       <NavigationContainer>
          <NativeBaseProvider>
+          <Header />
               <DrawerNavigation />
          </NativeBaseProvider>
     
