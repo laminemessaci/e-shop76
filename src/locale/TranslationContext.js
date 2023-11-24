@@ -32,6 +32,15 @@ export const TranslationProvider = ({ children }) => {
       "Already have an account?": "Already have an account?",
       "Don't have an account?": "Don't have an account?",
       "Sign in": "Sign in",
+      "Sign up": "Sign up",
+      "Sign out": "Sign out",
+      "Forgot Password?": "Forgot Password?",
+      "Reset Password": "Reset Password",
+      "Enter your email address below and we'll send you a link to reset your password":
+        "Enter your email address below and we'll send you a link to reset your password",
+      "Create Account": "Create Account",
+      "Already have an account?": "Already have an account?",
+      "Tell a Friend": "Tell a Friend",
     },
     fr: {
       greeting: "Bonjour le monde!",
@@ -55,6 +64,15 @@ export const TranslationProvider = ({ children }) => {
       "Already have an account?": "Vous avez déjà un compte?",
       "Don't have an account?": "Vous n'avez pas de compte?",
       "Sign in": "S'identifier",
+      "Sign up": "S'inscrire",
+      "Sign out": "Se deconnecter",
+      "Forgot Password?": "Mot de passe oublie?",
+      "Reset Password": "Reinitialiser le mot de passe",
+      "Enter your email address below and we'll send you a link to reset your password":
+        "Entrez votre adresse email ci-dessous et nous vous enverrons un lien pour reinitialiser votre mot de passe",
+      "Create Account": "Creer un compte",
+      "Already have an account?": "Vous avez déjà un compte?",
+      "Tell a Friend": "Raconter un ami",
     },
     ar: {
       greeting: "مرحبا بالعالم!",
@@ -79,6 +97,15 @@ export const TranslationProvider = ({ children }) => {
       "Already have an account?": "هل لديك حساب؟",
       "Don't have an account?": "ليس لديك حساب؟",
       "Sign in": "تسجيل الدخول",
+      "Sign up": "تسجيل",
+      "Sign out": "تسجيل خروج",
+      "Forgot Password?": "نسيت كلمة المرور؟",
+      "Reset Password": "اعادة تعيين كلمة المرور",
+      "Enter your email address below and we'll send you a link to reset your password":
+        "ادخل عنوان بريدك الالكتروني ادناه وسوف نقوم بارسال لك رابط لاعادة تعيين كلمة المرور",
+      "Create Account": "انشاء حساب",
+      "Already have an account?": "هل لديك حساب؟",
+      "Tell a Friend": "راسل صديق",
     },
   };
 

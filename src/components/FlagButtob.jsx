@@ -24,7 +24,7 @@ const FlagButton = ({ language, onPress }) => {
       <FontAwesome5
         name={flagIcon}
         size={18}
-        color={theme.colors.primary}
+        color={theme.colors.primaryLight}
         style={styles.icon}
       />
     </TouchableOpacity>

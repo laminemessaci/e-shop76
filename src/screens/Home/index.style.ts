@@ -23,12 +23,7 @@ const styles: IStyles = {
 
   switchContainer: (theme) => ({
     flexDirection: "row",
-    alignItems: "flex-end",
-    justifyContent: "flex-end",
-    marginTop: 32,
-    marginBottom: 16,
-    marginRight: 12,
-    marginLeft: 32,
+    justifyContent: "flex-start",
   }),
 };
 

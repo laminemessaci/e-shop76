@@ -18,7 +18,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useTheme } from "../../theme/ThemeProvider.tsx";
 import { useTranslation } from "../../locale/useTranslation.js";
 
-import styles, { Container } from "./index.style";
+import styles from "./index.style";
+import FlagButton from "../FlagButtob.jsx";
 
 const CustomDrawer = (props) => {
   const theme = useTheme();
@@ -26,6 +27,24 @@ const CustomDrawer = (props) => {
   const [loaded] = useFonts({
     Montserrat: require("../../../assets/fonts/Montserrat-Light.ttf"),
   });
+
+
+  const toggleLanguage = () => {
+    switchLanguage(language);
+  };
+  const switchLanguage = (langage) => {
+    let newLanguage = "en";
+
+    if (langage === "en") {
+      newLanguage = "fr";
+    } else if (langage === "fr") {
+      newLanguage = "ar";
+    } else if (langage === "ar") {
+      newLanguage = "en";
+    }
+
+    changeLanguage(newLanguage);
+  };
 
   if (!loaded) {
     return null;
@@ -41,15 +60,18 @@ const CustomDrawer = (props) => {
           source={require("../../../assets/images/coffee-bg.jpg")}
           style={{ padding: 24 }}
         >
-          <Image
-            source={require("../../../assets/images/drawer-profile.jpeg")}
-            style={{
-              height: 80,
-              width: 80,
-              borderRadius: 40,
-              marginBottom: 10,
-            }}
-          />
+          <View style={{ flexDirection: "row", alignItems: "start" , justifyContent: "space-between"}}>
+            <Image
+              source={require("../../../assets/images/drawer-profile.jpeg")}
+              style={{
+                height: 80,
+                width: 80,
+                borderRadius: 40,
+                marginBottom: 10,
+              }}
+            />
+            <FlagButton language={language} onPress={toggleLanguage} />
+          </View>
           <Text
             style={{
               color: "#fff",
@@ -60,6 +82,7 @@ const CustomDrawer = (props) => {
           >
             John Doe
           </Text>
+
           <View style={{ flexDirection: "row" }}>
             <Text
               style={{
@@ -80,30 +103,22 @@ const CustomDrawer = (props) => {
       <View style={{ padding: 20, borderTopWidth: 1, borderTopColor: "#ccc" }}>
         <TouchableOpacity onPress={() => {}} style={{ paddingVertical: 15 }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Ionicons name="share-social-outline" size={22} />
-            <Text
-              style={{
-                fontSize: 15,
-                fontFamily: "Montserrat",
-                marginLeft: 5,
-              }}
-            >
-              {"Tell a Friend"}
-            </Text>
+            <Ionicons
+              name="share-social-outline"
+              size={22}
+              color={theme.colors.white}
+            />
+            <Text style={styles.label(theme)}>{t("Tell a Friend")}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {}} style={{ paddingVertical: 15 }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Ionicons name="exit-outline" size={22} />
-            <Text
-              style={{
-                fontSize: 15,
-                fontFamily: "Montserrat",
-                marginLeft: 5,
-              }}
-            >
-              {"Sin out"}
-            </Text>
+            <Ionicons
+              name="exit-outline"
+              size={22}
+              color={theme.colors.white}
+            />
+            <Text style={styles.label(theme)}>{t("Sign out")}</Text>
           </View>
         </TouchableOpacity>
       </View>

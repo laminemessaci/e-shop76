@@ -40,7 +40,10 @@ const styles: IStyles = {
     color: theme.colors.primary,
   }),
   label: (theme): TextStyle => ({
-    // Add your implementation here
+    color: theme.colors.white,
+    fontSize: 15,
+    fontFamily: "Montserrat",
+    marginLeft: 5,
   }),
   // Add the missing properties here
   headerText: (theme) => ({

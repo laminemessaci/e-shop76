@@ -17,30 +17,8 @@ import FlagButton from "../../components/FlagButtob.jsx";
 
 const Home = () => {
   const theme = useTheme();
-  const { t, changeLanguage, language } = useTranslation();
 
-  const toggleLanguage = () => {
-    switchLanguage(language);
-  };
-  const switchLanguage = (langage) => {
-    let newLanguage = "en";
-
-    if (langage === "en") {
-      newLanguage = "fr";
-    } else if (langage === "fr") {
-      newLanguage = "ar";
-    } else if (langage === "ar") {
-      newLanguage = "en";
-    }
-
-    changeLanguage(newLanguage);
-  };
-
-  return (
-    <Container style={styles.switchContainer(theme)}>
-      <FlagButton language={language} onPress={toggleLanguage} />
-    </Container>
-  );
+  return <Container style={styles.switchContainer(theme)}></Container>;
 };
 
 export default Home;
