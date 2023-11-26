@@ -22,7 +22,7 @@ const styles: IStyles = {
     marginLeft: 10,
     alignItems: "center",
     elevation: 8,
-    backgroundColor: "white",
+    backgroundColor: theme.colors.white,
   }),
   centered: (theme) => ({
     flex: 1,
@@ -33,17 +33,21 @@ const styles: IStyles = {
   body: (theme) => ({
     marginTop: 10,
     alignItems: "center",
+    backgroundColor: theme.colors.white,
+
+   
   }),
   image: (theme) => ({
     width: SCREEN_WIDTH / 2 - 20 - 10,
     height: SCREEN_WIDTH / 2 - 20 - 30,
     resizeMode: "contain",
     backgroundColor: theme.colors.trans,
+    top: -55,
   }),
-  title: (theme: { colors: { trans: any } }) => ({
+  title: (theme) => ({
     fontSize: 15,
     fontWeight: "bold",
-    color: theme.colors.trans,
+    color: theme.colors.primary,
   }),
   price: (theme: { colors: { trans: any } }) => ({
     fontSize: 15,

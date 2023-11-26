@@ -12,7 +12,7 @@ export default function AppStackNavigator() {
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen
-        name="Home"
+        name="BottomTabs"
         component={BottomTabsNavigator}
         headerShown={true}
         options={{

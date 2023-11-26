@@ -26,6 +26,7 @@ const BottomTabsNavigator = (props) => {
         backgroundColor: theme.colors.primary,
         borderTopWidth: 1,
         borderTopColor: theme.colors.primary,
+        height: 68,
       }}
       labeled
       shifting
