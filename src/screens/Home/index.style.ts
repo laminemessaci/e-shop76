@@ -1,10 +1,13 @@
-import { ViewStyle } from "react-native";
+import { TextStyle, ViewStyle } from "react-native";
 import type { ReactNativePaper } from "react-native-paper";
 
 interface IStyles {
   container: (arg0: ReactNativePaper.Theme) => ViewStyle;
   centered: (arg0: ReactNativePaper.Theme) => ViewStyle;
-  switchContainer: (arg0: ReactNativePaper.Theme) => ViewStyle;
+
+  searchBarContainer: (arg0: ReactNativePaper.Theme) => ViewStyle;
+  inputContainer: (arg0: ReactNativePaper.Theme) => ViewStyle;
+  input: (arg0: ReactNativePaper.Theme) => TextStyle;
 }
 
 const styles: IStyles = {
@@ -21,9 +24,24 @@ const styles: IStyles = {
     backgroundColor: theme.colors.white,
   }),
 
-  switchContainer: (theme) => ({
+  searchBarContainer: (theme) => ({
+    backgroundColor: theme.colors.white,
+  }),
+  inputContainer: (theme) => ({
+    backgroundColor: theme.colors.lightGrey,
+    height: 30,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: theme.colors.primary,
+    marginHorizontal: 20,
     flexDirection: "row",
-    justifyContent: "flex-start",
+    alignItems: "center",
+  }),
+
+  input: (theme) => ({
+    fontSize: theme.fonts.body2.fontSize,
+    flex: 1,
+    marginHorizontal: 10,
   }),
 };
 

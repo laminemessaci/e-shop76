@@ -18,7 +18,7 @@ type ProductCardProps = {
 
 const ProductCard: React.FC<ProductCardProps> = (props : ProductCardProps   ): React.ReactElement => {
 
-console.log('props', props)
+
 
   const { image, name, price, description, id } = props.product
 
@@ -34,6 +34,8 @@ console.log('props', props)
             />
 
       <Text style={styles.title(theme)}>{name.length > 15 ? `${name.substring(0, 15)}...` : name}</Text>
+      <Text style={styles.description(theme)}>{description.length > 15 ? `${description.substring(0, 15)}...` : description}</Text>
+
       <Text style={styles.price(theme)}>{props.product.price} €</Text>
      
     </View>

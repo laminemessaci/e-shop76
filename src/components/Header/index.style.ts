@@ -14,7 +14,7 @@ const styles: IStyles = {
     alignItems: "center",
     textAlign: "center",
     width: SCREEN_WIDTH,
-    backgroundColor: theme.colors.white,
+    backgroundColor: theme.colors.secondary,
   }),
   image: (theme) => ({
     width: 50,

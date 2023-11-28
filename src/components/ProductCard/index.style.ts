@@ -1,8 +1,10 @@
 import { ViewStyle, TextStyle, ImageStyle } from "react-native";
 import type { ReactNativePaper } from "react-native-paper";
 import { SCREEN_WIDTH } from "../../constants";
+import { ITheme } from "../../types/themes";
 
 interface IStyles {
+  description(theme: ITheme): import("react-native").StyleProp<TextStyle>;
   container: (arg0: ReactNativePaper.Theme) => ViewStyle;
   body: (arg0: ReactNativePaper.Theme) => ViewStyle;
   centered: (arg0: ReactNativePaper.Theme) => ViewStyle;
@@ -34,25 +36,31 @@ const styles: IStyles = {
     marginTop: 10,
     alignItems: "center",
     backgroundColor: theme.colors.white,
-
-   
   }),
   image: (theme) => ({
-    width: SCREEN_WIDTH / 2 - 20 - 10,
-    height: SCREEN_WIDTH / 2 - 20 - 30,
+    width: SCREEN_WIDTH / 2 - 20 - 15,
+    height: SCREEN_WIDTH / 2 - 20 - 35,
     resizeMode: "contain",
     backgroundColor: theme.colors.trans,
     top: -55,
   }),
   title: (theme) => ({
+    fontFamily: "Montserrat",
     fontSize: 15,
     fontWeight: "bold",
     color: theme.colors.primary,
   }),
-  price: (theme: { colors: { trans: any } }) => ({
-    fontSize: 15,
+
+  description: (theme) => ({
+    fontSize: 11,
     fontWeight: "bold",
-    color: theme.colors.trans,
+    color: theme.colors.primaryDark,
+  }),
+  price: (theme) => ({
+    fontSize: 16,
+    fontWeight: "bold",
+    color: theme.colors.warning,
+    fontFamily: "Montserrat",
   }),
 };
 
