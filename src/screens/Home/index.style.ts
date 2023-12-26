@@ -1,5 +1,5 @@
 import { TextStyle, ViewStyle } from "react-native";
-import type { ReactNativePaper } from "react-native-paper";
+import type  { ReactNativePaper }  from "react-native-paper";
 
 interface IStyles {
   container: (arg0: ReactNativePaper.Theme) => ViewStyle;
@@ -25,6 +25,7 @@ const styles: IStyles = {
   }),
 
   searchBarContainer: (theme) => ({
+    marginLeft: 40,
     backgroundColor: theme.colors.white,
   }),
   inputContainer: (theme) => ({
@@ -36,6 +37,7 @@ const styles: IStyles = {
     marginHorizontal: 20,
     flexDirection: "row",
     alignItems: "center",
+   
   }),
 
   input: (theme) => ({

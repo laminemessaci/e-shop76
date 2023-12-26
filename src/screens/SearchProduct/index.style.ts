@@ -1,21 +1,14 @@
-import { ViewStyle } from "react-native";
+import { ViewStyle, TextStyle } from "react-native";
 import type { ReactNativePaper } from "react-native-paper";
 
 export interface IStyles {
-  name(theme: {
-    colors: any; theme: string; 
-}): import("react-native").StyleProp<import("react-native").TextStyle>;
-  title(theme: {
-    colors: any; theme: string; 
-}): import("react-native").StyleProp<import("react-native").TextStyle>;
-  description(theme: {
-    colors: any; theme: string; 
-}): import("react-native").StyleProp<import("react-native").TextStyle>;
-  price(theme: {
-    colors: any; theme: string; 
-}): import("react-native").StyleProp<import("react-native").TextStyle>;
-  image(theme: { theme: string; }): import("react-native").StyleProp<import("react-native").ImageStyle>;
+  name: (theme: ReactNativePaper.Theme) => TextStyle;
   container: (theme: ReactNativePaper.Theme) => ViewStyle;
+  title: (theme: ReactNativePaper.Theme) => TextStyle;
+  description: (theme: ReactNativePaper.Theme) => TextStyle;
+  price: (theme: ReactNativePaper.Theme) => TextStyle;
+  image: (theme: ReactNativePaper.Theme) => ViewStyle;
+  
 }
 
 const styles: IStyles = {
@@ -37,11 +30,11 @@ const styles: IStyles = {
     fontSize: 15,
     color: theme.colors.primary,
   }),
-  price: (theme) => ({
+  price: (theme : ReactNativePaper.Theme) => ({
     fontSize: 15,
     color: theme.colors.primary,
   }),
-  image: (theme) => ({
+  image: (theme: ReactNativePaper.Theme) => ({
     width: 100,
     height: 100,
   }),

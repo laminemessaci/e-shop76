@@ -6,10 +6,10 @@ import { SCREEN_HEIGHT } from '../../constants';
 import { useTheme } from '../../theme/ThemeProvider';
 
 type BannerProps = {
-  text: string;
+
 };
 
-const Banner: React.FC<BannerProps> = ({ text }) => {
+const Banner: React.FC<BannerProps> = (props) => {
 const [bannerData, setBannerData] = useState<any>([])
 const theme = useTheme();
 

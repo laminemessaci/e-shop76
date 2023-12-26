@@ -28,7 +28,6 @@ const CustomDrawer = (props) => {
     Montserrat: require("../../../assets/fonts/Montserrat-Light.ttf"),
   });
 
-
   const toggleLanguage = () => {
     switchLanguage(language);
   };
@@ -60,7 +59,13 @@ const CustomDrawer = (props) => {
           source={require("../../../assets/images/coffee-bg.jpg")}
           style={{ padding: 24 }}
         >
-          <View style={{ flexDirection: "row", alignItems: "start" , justifyContent: "space-between"}}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "start",
+              justifyContent: "space-between",
+            }}
+          >
             <Image
               source={require("../../../assets/images/drawer-profile.jpeg")}
               style={{
@@ -76,7 +81,7 @@ const CustomDrawer = (props) => {
             style={{
               color: "#fff",
               fontSize: 16,
-              fontFamily: "Montserrat",
+
               marginBottom: 8,
             }}
           >
@@ -87,7 +92,7 @@ const CustomDrawer = (props) => {
             <Text
               style={{
                 color: "#fff",
-                fontFamily: "Montserrat",
+
                 marginRight: 8,
               }}
             >

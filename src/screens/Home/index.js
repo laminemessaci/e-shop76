@@ -14,6 +14,8 @@ import SearchProduct from "../../screens/SearchProduct";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { SearchBar } from "react-native-elements";
 import Banner from "../../components/Banner";
+import CategoryFilter from "../../components/CategoryFilter";
+import { FontAwesome } from "@expo/vector-icons";
 
 const Home = () => {
   const [focus, setFocus] = useState();
@@ -56,6 +58,20 @@ const Home = () => {
 
   return (
     <>
+      <View style={{ justifyContent: "end", top: 10 }}>
+        <FontAwesome
+          name="bars"
+          onPress={() => navigate.openDrawer()}
+          size={24}
+          color="black"
+          style={{
+            marginLeft: 10,
+            position: "absolute",
+            zIndex: 1,
+          }}
+        />
+      </View>
+
       <SearchBar
         placeholder="Search"
         lightTheme={true}
@@ -71,6 +87,7 @@ const Home = () => {
 
       <View style={styles.container(theme)}>
         <Banner text="Banner" />
+        <CategoryFilter />
         <FlatList
           data={focus ? productsFiltered : products}
           renderItem={({ item }) => (
