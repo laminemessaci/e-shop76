@@ -24,9 +24,7 @@ import FlagButton from "../FlagButtob.jsx";
 const CustomDrawer = (props) => {
   const theme = useTheme();
   const { t, changeLanguage, language } = useTranslation();
-  const [loaded] = useFonts({
-    Montserrat: require("../../../assets/fonts/Montserrat-Light.ttf"),
-  });
+
 
   const toggleLanguage = () => {
     switchLanguage(language);
@@ -45,9 +43,7 @@ const CustomDrawer = (props) => {
     changeLanguage(newLanguage);
   };
 
-  if (!loaded) {
-    return null;
-  }
+
 
   return (
     <View style={styles.container(theme)}>

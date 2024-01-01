@@ -42,12 +42,11 @@ const styles: IStyles = {
   label: (theme): TextStyle => ({
     color: theme.colors.white,
     fontSize: 15,
-    fontFamily: "Montserrat",
     marginLeft: 5,
   }),
   // Add the missing properties here
   headerText: (theme) => ({
-    // Add your implementation here
+   
   }),
   headerButton: (theme) => ({
     // Add your implementation here
