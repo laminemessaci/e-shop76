@@ -5,16 +5,17 @@ import * as SplashScreen from 'expo-splash-screen';
 import { NativeBaseProvider } from 'native-base';
 
 import { NavigationContainer } from "@react-navigation/native";
+import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
+import React, { useCallback, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import DrawerNavigation from "./src/navigation/DrawerNavigation.js";
-import React, { useCallback, useEffect } from "react";
-import { TranslationProvider } from "./src/locale/TranslationContext";
 import Header from "./src/components/Header";
-import { useFonts } from "expo-font";
+import { TranslationProvider } from "./src/locale/TranslationContext";
+import DrawerNavigation from "./src/navigation/DrawerNavigation.js";
 
-
+import { store } from "./src/redux/store/idex";
+import { Provider } from "react-redux";
 
 
 
@@ -36,12 +37,17 @@ export default function App() {
     <SafeAreaProvider onLayout={onLayoutRootView}>
    <TranslationProvider>
       <NavigationContainer>
+          <Provider store={store}>
          <NativeBaseProvider>
+      
           <Header />
               <DrawerNavigation />
          </NativeBaseProvider>
+
+       </Provider>
     
       </NavigationContainer>
+        
     </TranslationProvider>
     </SafeAreaProvider>
   );

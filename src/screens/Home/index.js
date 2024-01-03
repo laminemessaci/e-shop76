@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { View, FlatList, TouchableOpacity } from "react-native";
+import { useSelector } from "react-redux";
 
 import styles from "./index.style";
 import { useTheme } from "../../theme/ThemeProvider.tsx";
@@ -25,10 +26,13 @@ const Home = () => {
 
   const theme = useTheme();
 
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
+  console.log(cartItems);
+
   const navigate = useNavigation();
 
   const openList = () => {
-    console.log("open");
     setFocus(true);
   };
 

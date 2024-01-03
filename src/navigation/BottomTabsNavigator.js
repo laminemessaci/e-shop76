@@ -7,6 +7,7 @@ import {
   ProfileScreen,
   SettingsScreen,
   Home,
+  Cart,
 } from "@screens";
 import { useTheme } from "../theme/ThemeProvider.tsx";
 import { useTranslation } from "../locale/useTranslation.js";
@@ -43,12 +44,12 @@ const BottomTabsNavigator = (props) => {
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={NotificationScreen}
+        name="Cart"
+        component={Cart}
         options={{
-          tabBarLabel: t("Notifications"),
+          tabBarLabel: t("Cart"),
           tabBarIcon: ({ color }) => (
-            <Ionicons name="ios-notifications" color={color} size={24} />
+            <Ionicons name="ios-cart" color={color} size={24} />
           ),
         }}
       />

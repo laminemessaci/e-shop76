@@ -36,7 +36,7 @@ const ProductDetails = ({item}: {item: Item}): JSX.Element => {
           />
       <Heading>Details</Heading>
       <Text fontSize={"2xl"}>FIFA 2023</Text>
-      <Text fontSize={"lg"}>Price: {product.price} €</Text>
+     
     </ScrollView>
   </Container>
   </Center>
