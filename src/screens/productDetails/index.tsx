@@ -1,13 +1,19 @@
-import { View, Image, Button, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Button,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import React, { useState } from "react";
-
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from "../../constants";
 import { useTheme } from "../../theme/ThemeProvider";
 
 import styles from "./index.style";
-import { Container, Heading, Center, Text } from "native-base";
 
 interface Item {
-  image: string,
+  image: string;
   name: string;
   price: number;
 }
@@ -16,31 +22,57 @@ interface Item {
  * Render the product details component.
  * @returns JSX.Element
  */
-const ProductDetails = ({item}: {item: Item}): JSX.Element => {
+const ProductDetails = ({ item }: { item: Item }): JSX.Element => {
   const [product, setProduct] = useState<Item>(item);
 
   const theme = useTheme();
+  const productImages = [
+    "https://via.placeholder.com/350x150",
+    "https://via.placeholder.com/350x150",
+    "https://via.placeholder.com/350x150",
+    "https://via.placeholder.com/350x150",
+  ];
+
+  const handleAddToCart = () => {
+    // Logique pour ajouter au panier
+    console.log("Produit ajouté au panier !");
+  };
 
   return (
-<Center>
-  <Container>
-    
-    <ScrollView 
-     contentContainerStyle = {{flex:1, alignItems:"center", padding:10, paddingTop:60,  elevation:2}}
+    <View style={styles.container(theme)}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.imageScrollView}
       >
-      <Image
+        {productImages.map((image, index) => (
+          <Image
+            key={index}
             style={styles.image(theme)}
-            source={{uri: product?.image ?
-               product.image :
-              "https://cdn.pixabay.com/photo/2012/04/01/17/29/box-23649_960_720.png"}}
+            source={{ uri: image }}
           />
-      <Heading>Details</Heading>
-      <Text fontSize={"2xl"}>FIFA 2023</Text>
-     
-    </ScrollView>
-  </Container>
-  </Center>
- 
+        ))}
+      </ScrollView>
+
+      <Text style={styles.title(theme)}>Nom du produit</Text>
+      <Text style={styles.price(theme)}>Prix : 99,99 $</Text>
+      <View style={styles.quantityContainer(theme)}>
+        <Text style={styles.quantity(theme)}>Quantité : 5</Text>
+      </View>
+      <View style={styles.removeButton(theme)}>{/* ... */}</View>
+      <View style={styles.infoContainer(theme)}>
+        <Text style={styles.name(theme)}>Nom du produit</Text>
+      </View>
+      <View style={styles.itemContainer(theme)}>{/* ... */}</View>
+
+      {/* Bouton Ajouter au panier */}
+      <TouchableOpacity
+        style={styles.addToCartButton(theme)}
+        onPress={handleAddToCart}
+      >
+        <Text style={styles.addToCartButtonText(theme)}>Ajouter au panier</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 

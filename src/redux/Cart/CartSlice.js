@@ -1,7 +1,38 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  cartItems: [],
+  cartItems: [
+    {
+      id: 1,
+      product: {
+        id: 1,
+        name: "Produit 1",
+        image: "https://via.placeholder.com/150",
+        price: 9.99,
+      },
+      quantity: 2,
+    },
+    {
+      id: 2,
+      product: {
+        id: 2,
+        name: "Produit 2",
+        image: "https://via.placeholder.com/150",
+        price: 19.99,
+      },
+      quantity: 1,
+    },
+    {
+      id: 3,
+      product: {
+        id: 3,
+        name: "Produit 3",
+        image: "https://via.placeholder.com/150",
+        price: 29.99,
+      },
+      quantity: 3,
+    },
+  ],
   cartTotalQuantity: 0,
   cartTotalAmount: 0,
 };
